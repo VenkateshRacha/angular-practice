@@ -1,0 +1,37 @@
+<h2>Forms Examples</h2>
+
+<form novalidate #sForm="ngForm">
+    ID : <input type="text" name="EId" [(ngModel)]="EId" required minlength="3" #IdCtrl="ngModel">
+    <span *ngIf="IdCtrl.touched && IdCtrl.invalid">
+        <span *ngIf="IdCtrl.errors.required">
+            Please provide the value
+        </span>
+        <span *ngIf="IdCtrl.errors.minlength">
+            please povide the atleast 3 char
+        </span>
+    </span>
+    <br>
+    Name : <input type="text" name="EName" [(ngModel)]="EName" required pattern=[a-zA-Z]{4,6} #nameCtrl="ngModel"> 
+    <span *ngIf="nameCtrl.invalid">
+        <span *ngIf="nameCtrl.errors.pattern">
+            please provide the lowercase and min 4 and max 6
+        </span>        
+    </span>
+    <br>
+    Email: <input type="text" name="Email" [(ngModel)]="Email" email #emlCtrl="ngModel">
+    <span *ngIf="emlCtrl.invalid">
+        <span *ngIf="emlCtrl.errors.email">
+            Please provide the proper email
+        </span>
+    </span>
+    <br>
+    <button (click)="register();" [disabled] = "sForm.invalid">Register</button>
+</form>
+<!-- 
+<h3>Objects</h3>
+<form action="">
+    Employee Id: <input type="text" name="EId" [(ngModel)]= "E.EId">
+    Name: <input type="text" name="EName" [(ngModel)]="E.EName">
+    Email: <input type="text" name="Email" [(ngModel)]="E.Email"> <br>
+    <button (click)="registerObjects()">Employee Register</button>
+</form> -->

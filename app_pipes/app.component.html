@@ -1,0 +1,41 @@
+<h2>Validation Examples</h2>
+
+<h3>String</h3>
+Name : {{EName}} <br>
+Name in upper case :{{EName | uppercase }} <br>
+Name in lower case :{{EName | lowercase }} <br>
+Name in Title case :{{EName | titlecase }} <br> 
+
+<h3>Number</h3>
+Fee: {{fee | currency :"INR" }} <br>
+pi: {{pi | number :"2.2-2"}} <br>
+Percentage: {{percentage | percent: "2.2"}}
+
+<h3>Date</h3>
+Date: {{today}} <br>
+Short Date: {{today | date: "short"}} <br>
+Medium Date: {{today | date: "medium"}} <br>
+Long Date: {{today | date:  "long"}} <br>
+Date : {{today|date : "dd-MMM-yyyy HH:MM "}}
+<h3>Object</h3>
+<table border="1">
+    <tr> 
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    <tr *ngFor="let s of students">
+        <td>{{s.id}}</td>
+        <td>{{s.name}}</td>
+    </tr>
+</table>
+<h3>Slice</h3>
+<table border="1">
+    <tr> 
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    <tr *ngFor="let s of students | slice: 2:4">
+        <td>{{s.id}}</td>
+        <td>{{s.name}}</td>
+    </tr>
+</table>

@@ -1,0 +1,21 @@
+<h1>Custom Pipes Examples</h1>
+
+Custom Pipe:    {{msg | basic :"upper"}} <br>
+Reverse string  {{msg | reverse}}
+
+<table border="1">
+
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    <tr>
+        <td> <input type="text" name="id" [(ngModel)]="id"> </td>
+        <td> <input type="text" name="name" [(ngModel)]="name"> </td>
+    </tr>
+    <tr *ngFor="let s of students | Cfilter:id:name">
+        <td> {{s.id}} </td>
+        <td> {{s.name}} </td>
+    </tr>
+
+</table>
