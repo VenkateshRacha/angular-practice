@@ -1,0 +1,55 @@
+<h2> Angular Practice</h2>
+
+<h3>Events</h3>
+<button (click)="msg();">Click</button>
+<button (click)="m1();">Alert Click</button>
+
+<h3>Ng-For</h3>
+<h2>Strings</h2>
+ <button (click)="namesMethod();"> Change</button> 
+<br>
+<span *ngFor="let name of names">
+    {{name}}
+</span>
+<br>
+<br>
+<select>
+    <option *ngFor="let name of names">
+        {{name}}
+    </option>
+</select>
+<h2>Objects</h2>
+<button (click)="next()">>></button>
+<table border="=1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    <tr *ngFor="let e  of employee">
+        <td>{{e.id}}</td>
+        <td>{{e.Name}}</td>
+    </tr>
+</table>
+<h3>Ng-IF</h3>
+<h2>Variables</h2> 
+<button (click)="show()">Show</button>
+<button (click)="hide()">Hide</button> <br>
+<div *ngIf="display">
+    This is will show depeend on Show and Hide button
+</div>
+<h2>Condition</h2>
+<button (click)="next2()">Hide Table rows</button>
+<table border="=1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    <tr *ngFor="let e  of employee">
+        <td>{{e.id}}</td>
+        <td>{{e.Name}}</td>
+    </tr>
+    <tr *ngIf="employee.length == 0">
+        <td colspan="2">No Records</td>
+    </tr>
+</table>
+

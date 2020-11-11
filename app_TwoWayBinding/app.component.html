@@ -1,0 +1,16 @@
+<h2>Two Way binding</h2>
+
+<h3>Basic</h3>
+<form >
+    ID : <input type="text" name="EId" [(ngModel)]="EId">
+    Name : <input type="text" name="EName" [(ngModel)]="EName" > <br>
+    <button (click)="register()">Register</button>
+</form>
+
+<h3>Objects</h3>
+<form action="">
+    Employee Id: <input type="text" name="EId" [(ngModel)]= "E.EId">
+    Name: <input type="text" name="EName" [(ngModel)]="E.EName">
+    Email: <input type="text" name="Email" [(ngModel)]="E.Email"> <br>
+    <button (click)="registerObjects()">Employee Register</button>
+</form>
