@@ -1,0 +1,30 @@
+<!-- <h2>Student Deletion</h2> -->
+<fieldset>
+    <legend>Deleting Students</legend>
+    <form novalidate #Inform="ngForm">
+        <table>
+            <tr>
+                <td> Id : </td>
+                <td> <input type="Id" name = "Id" [(ngModel)]="s.id" required pattern="[0-9][0-9]" #idCtrl="ngModel"></td>
+                <td>
+                    <span *ngIf="idCtrl.invalid">
+                        <span *ngIf="idCtrl.errors.required">
+                            Please Provide the value.
+                        </span>
+                        <span *ngIf="idCtrl.errors.pattern">
+                            Provide numbers only.
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button (click)="delete();" [disabled] = "Inform.invalid">Delete</button>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+    
+</fieldset>

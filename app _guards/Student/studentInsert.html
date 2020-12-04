@@ -1,0 +1,38 @@
+<h2>Student Insertion</h2>
+<!-- <form >
+    <table>
+        <tr>
+            <td>Id: </td>
+            <td><input type="text" name="id" [(ngModel)]="s.id"></td>
+        </tr>
+        <tr>
+            <td>Name: </td>
+            <td><input type="text" name="name" [(ngModel)]="s.name"></td>
+        </tr>
+        <tr>
+            <button (click)="save();" class="btn btn-success">Save</button>
+        </tr>
+    </table>
+</form> -->
+
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                    <label for="">Id</label>
+                    <input type="text" class="form-control" name="id" [(ngModel)]="s.id">
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" name="name" [(ngModel)]="s.name">
+                    </div>
+                    
+                    <button (click)="save();" class="btn btn-success">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

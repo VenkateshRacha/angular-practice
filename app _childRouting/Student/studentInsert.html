@@ -1,0 +1,16 @@
+<h2>Student Insertion</h2>
+<form >
+    <table>
+        <tr>
+            <td>Id: </td>
+            <td><input type="text" name="id" [(ngModel)]="s.Id"></td>
+        </tr>
+        <tr>
+            <td>Name: </td>
+            <td><input type="text" name="name" [(ngModel)]="s.Name"></td>
+        </tr>
+        <tr>
+            <button (click)="save();">Save</button>
+        </tr>
+    </table>
+</form>
