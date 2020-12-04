@@ -1,0 +1,24 @@
+<h1>Http Get Example</h1>
+
+<table border=1>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>email</th>
+        <th>Phone Number</th>
+        <th>City</th>
+    </tr>
+    <tr *ngFor="let u of users">
+        <td>{{u.id}}</td>
+        <td>{{u.name}}</td>
+        <td>{{u.email}}</td>
+        <td>{{u.phone}}</td>
+        <td>{{u.address.city}}</td>
+    </tr>
+</table>
+<br>
+Name:
+<select name="Name" id="Name">
+    <option *ngFor="let u of users">{{u.name}}</option>
+</select>
+

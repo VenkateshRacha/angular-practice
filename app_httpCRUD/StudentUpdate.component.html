@@ -1,0 +1,43 @@
+<fieldset>
+    <legend>Updating Students</legend>
+    <form novalidate #Inform="ngForm">
+        <table>
+            <tr>
+                <td> Id : </td>
+                <td> <input type="Id" name = "Id" [(ngModel)]="s.id" required pattern="[0-9]" #idCtrl="ngModel"></td>
+                <td>
+                    <span *ngIf="idCtrl.invalid">
+                        <span *ngIf="idCtrl.errors.required">
+                            Please Provide the value.
+                        </span>
+                        <span *ngIf="idCtrl.errors.pattern">
+                            Provide numbers only.
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td> Name : </td>
+                <td> <input type="name" name = "name" [(ngModel)]="s.name" required  #nameCtrl="ngModel"></td>
+                <td>
+                    <span *ngIf="nameCtrl.invalid">
+                        <span *ngIf="nameCtrl.errors.required">
+                            Please Provide the value.
+                        </span>
+                        <!-- <span *ngIf="nameCtrl.errors.pattern"> 
+                            Name should be letters only.
+                        </span> -->
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button (click)="update();" [disabled] = "Inform.invalid">Update</button>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+    
+</fieldset>
